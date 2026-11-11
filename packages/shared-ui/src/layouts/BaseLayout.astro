@@ -9,6 +9,8 @@ import type { DesignTokens } from '@astro-fleet/config';
 import { tokensToCSSVars } from '../utils/tokens.js';
 
 export interface Props {
+  /** Document language */
+  lang?: string;
   /** Page title for SEO */
   title: string;
   /** Meta description for SEO */
@@ -84,6 +86,7 @@ export interface Props {
 }
 
 const {
+  lang = 'en',
   title,
   description,
   keywords,
@@ -121,7 +124,7 @@ const cssVars = designTokens ? tokensToCSSVars(designTokens) : '';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <SEOHead
       title={title}
