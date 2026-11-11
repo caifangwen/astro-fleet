@@ -1,0 +1,46 @@
+{
+  "name": "Wellnest Health",
+  "industry": "Health Management",
+  "eyebrow": "Health Management / WEBSITE CONCEPT",
+  "headline": "Make room for healthier habits",
+  "intro": "A clear guide to lifestyle support, personal records, and service pathways for everyday wellbeing.",
+  "promise": "Lasting habits begin with small steps people can understand and actually take.",
+  "audience": "people building sustainable health routines",
+  "services": [
+    {
+      "title": "Lifestyle foundations",
+      "detail": "Explore introductory ideas for sleep, movement, and food."
+    },
+    {
+      "title": "Personal records",
+      "detail": "Organize observations and reflect on change over time."
+    },
+    {
+      "title": "Service guide",
+      "detail": "Understand the common steps before and after a consultation."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Wellnest Health is a website concept for the health management sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#235660",
+    "paper": "#f2f8f5",
+    "accent": "#73a99e",
+    "soft": "#dcece7"
+  },
+  "layout": 3,
+  "index": 20
+}

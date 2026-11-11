@@ -1,0 +1,46 @@
+{
+  "name": "Gatherwell Events",
+  "industry": "Event Planning",
+  "eyebrow": "Event Planning / WEBSITE CONCEPT",
+  "headline": "Make every gathering count",
+  "intro": "From a first theme to the final run of show, explore a thoughtful path for brand events and community gatherings.",
+  "promise": "An event works best when people genuinely connect with each other and the ideas in the room.",
+  "audience": "teams creating in-person experiences",
+  "services": [
+    {
+      "title": "Theme development",
+      "detail": "Define the purpose, audience, and feeling of an event."
+    },
+    {
+      "title": "Program design",
+      "detail": "Shape the content, venue flow, and ways people participate."
+    },
+    {
+      "title": "On-site coordination",
+      "detail": "Keep roles, materials, and important moments aligned."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Gatherwell Events is a website concept for the event planning sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#3b2d48",
+    "paper": "#f7f2ef",
+    "accent": "#cb7e5c",
+    "soft": "#e5dbe8"
+  },
+  "layout": 3,
+  "index": 16
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Greenfield Farm",
+  "industry": "Agriculture",
+  "eyebrow": "Agriculture / WEBSITE CONCEPT",
+  "headline": "See where good food begins",
+  "intro": "Follow the seasons, crops, and everyday work behind food from field to table.",
+  "promise": "Respect the land and the season, and make the story behind each ingredient easier to see.",
+  "audience": "families curious about food origins",
+  "services": [
+    {
+      "title": "Seasonal produce",
+      "detail": "Explore ingredients by harvest season and everyday use."
+    },
+    {
+      "title": "Growing notes",
+      "detail": "See the work involved between planting and picking."
+    },
+    {
+      "title": "Kitchen ideas",
+      "detail": "Find straightforward storage and preparation suggestions."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Greenfield Farm is a website concept for the agriculture sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#34523f",
+    "paper": "#f4f5e9",
+    "accent": "#d09442",
+    "soft": "#dce5ce"
+  },
+  "layout": 1,
+  "index": 14
+}

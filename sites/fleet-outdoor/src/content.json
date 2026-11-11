@@ -1,0 +1,46 @@
+{
+  "name": "Trailkind",
+  "industry": "Outdoor Equipment",
+  "eyebrow": "Outdoor Equipment / WEBSITE CONCEPT",
+  "headline": "Go farther, carry less",
+  "intro": "Explore gear for hiking, camping, and weekend escapes through the real conditions in which it gets used.",
+  "promise": "Choose equipment for the route, weather, and habits you actually have.",
+  "audience": "people getting outside more often",
+  "services": [
+    {
+      "title": "Hiking essentials",
+      "detail": "Match basic gear to route length and likely conditions."
+    },
+    {
+      "title": "Camp organization",
+      "detail": "Explore practical ideas for portable and durable storage."
+    },
+    {
+      "title": "Trip guides",
+      "detail": "Use simple preparation checklists before heading out."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Trailkind is a website concept for the outdoor equipment sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#2d4238",
+    "paper": "#f1f1e9",
+    "accent": "#c77d43",
+    "soft": "#dce5d9"
+  },
+  "layout": 0,
+  "index": 17
+}

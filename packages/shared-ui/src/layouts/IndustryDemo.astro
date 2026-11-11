@@ -1,0 +1,113 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { MenuItem } from '../components/Header.astro';
+
+export interface DemoContent {
+  name: string;
+  industry: string;
+  eyebrow: string;
+  headline: string;
+  intro: string;
+  promise: string;
+  audience: string;
+  services: { title: string; detail: string }[];
+  steps: { title: string; detail: string }[];
+  about: string;
+  palette: { ink: string; paper: string; accent: string; soft: string };
+  layout: number;
+  index: number;
+}
+
+const { content } = Astro.props as { content: DemoContent };
+const navigation: MenuItem[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '#services' },
+  { label: 'Process', href: '#process' },
+  { label: 'About', href: '#about' },
+];
+const footerColumns = [
+  { title: 'Explore', links: navigation.map(({ label, href }) => ({ label, href })) },
+];
+const cssVars = `--demo-ink:${content.palette.ink};--demo-paper:${content.palette.paper};--demo-accent:${content.palette.accent};--demo-soft:${content.palette.soft};`;
+---
+
+<BaseLayout
+  lang="en"
+  title={`${content.name} · ${content.industry} Demo`}
+  description={content.intro}
+  noindex
+  {navigation}
+  {footerColumns}
+  siteName={content.name}
+  tagline="Industry website concept · For demonstration only"
+  ctaText="Explore services"
+  ctaHref="#services"
+>
+  <div class={`demo demo--${content.layout}`} style={cssVars}>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__text">
+        <p class="eyebrow"><span class="eyebrow__line"></span>{content.eyebrow}</p>
+        <h1 id="hero-heading">{content.headline}</h1>
+        <p class="hero__intro">{content.intro}</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#services">Explore services <span aria-hidden="true">↗</span></a>
+          <a class="button button--text" href="#about">About this concept <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="art__frame"><span class="art__index">{String(content.index).padStart(2, '0')} / 20</span><span class="art__symbol">{content.name.slice(0, 1)}</span><span class="art__caption">{content.industry}</span></div>
+      </div>
+    </section>
+
+    <section class="statement" aria-label="Our approach">
+      <p class="statement__label">OUR APPROACH / WHAT MATTERS</p>
+      <p class="statement__text">{content.promise}</p>
+      <p class="statement__audience">Designed for {content.audience}</p>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="section__head"><div><p class="eyebrow">01 / SERVICES</p><h2>Thoughtful work,<br /><em>made tangible.</em></h2></div><p>Clear offerings shaped around the needs of this industry.</p></div>
+      <div class="service-grid">
+        {content.services.map((service, i) => <article class="service"><span class="service__number">0{i + 1}</span><h3>{service.title}</h3><p>{service.detail}</p><span class="service__arrow" aria-hidden="true">↗</span></article>)}
+      </div>
+    </section>
+
+    <section id="process" class="section process">
+      <div class="section__head"><div><p class="eyebrow">02 / PROCESS</p><h2>A clear path<br /><em>from idea to action.</em></h2></div></div>
+      <div class="steps">{content.steps.map((step, i) => <article class="step"><span>0{i + 1}</span><div><h3>{step.title}</h3><p>{step.detail}</p></div></article>)}</div>
+    </section>
+
+    <section id="about" class="section about"><div><p class="eyebrow">03 / ABOUT THIS CONCEPT</p><h2>{content.name}</h2></div><div><p>{content.about}</p><p class="about__note">This is an industry website concept built with Astro Fleet. The brand, services, and visuals are illustrative. It does not represent an operating business or offer a contact form.</p><a class="button button--primary" href="#hero-heading">Back to top ↑</a></div></section>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .demo{--demo-ink:#18342f;--demo-paper:#f7f5ef;--demo-accent:#d35c3d;--demo-soft:#e9e6dc;color:var(--demo-ink);background:var(--demo-paper);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  .demo h1,.demo h2,.demo h3{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:inherit;line-height:1.18}
+  .demo .eyebrow{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;letter-spacing:.13em;color:var(--demo-accent)}
+  .demo .eyebrow__line{display:inline-block;width:1.8rem;height:1px;background:currentColor}
+  .demo .hero{min-height:36rem;display:grid;grid-template-columns:1.15fr .85fr;overflow:hidden;border-bottom:1px solid var(--demo-ink)}
+  .demo .hero__text{padding:clamp(3rem,8vw,7rem) clamp(1.5rem,7vw,7rem);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+  .demo h1{font-size:clamp(2.6rem,5.8vw,5.9rem);letter-spacing:-.055em;max-width:11ch;margin:2.4rem 0 1.5rem;font-weight:750}
+  .demo .hero__intro{font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.85;max-width:36rem;opacity:.78}
+  .demo .hero__actions{display:flex;align-items:center;flex-wrap:wrap;gap:1.7rem;margin-top:2.8rem}
+  .demo .button{display:inline-flex;align-items:center;gap:2.2rem;min-height:3.3rem;font-weight:700;font-size:.92rem;text-decoration:none;transition:transform .2s ease,opacity .2s ease}
+  .demo .button:hover{transform:translateY(-2px)}
+  .demo .button--primary{background:var(--demo-accent);color:#fff;padding:0 1.3rem}
+  .demo .button--text{color:var(--demo-ink);gap:.7rem}
+  .demo .hero__art{background:var(--demo-soft);padding:clamp(1.5rem,4vw,4rem);display:grid;place-items:center;position:relative;isolation:isolate}
+  .demo .hero__art:before{content:"";position:absolute;width:72%;aspect-ratio:1;border:1px solid var(--demo-accent);border-radius:50%;transform:translate(12%,5%);opacity:.5}
+  .demo .hero__art:after{content:"";position:absolute;width:56%;aspect-ratio:1;background:var(--demo-accent);border-radius:50%;transform:translate(-8%,-3%);opacity:.13;z-index:-1}
+  .demo .art__frame{width:min(100%,25rem);aspect-ratio:4/5;border:1px solid var(--demo-ink);display:flex;flex-direction:column;justify-content:space-between;padding:1.3rem;position:relative;z-index:1;backdrop-filter:blur(2px)}
+  .demo .art__index{font-size:.75rem;letter-spacing:.2em}.demo .art__symbol{font-size:clamp(8rem,18vw,17rem);font-weight:200;line-height:1;align-self:center;color:var(--demo-accent)}.demo .art__caption{text-align:right;font-size:.85rem;letter-spacing:.2em}
+  .demo .statement{display:grid;grid-template-columns:1fr 2.2fr 1fr;gap:2rem;padding:4.5rem clamp(1.5rem,7vw,7rem);align-items:start;border-bottom:1px solid var(--demo-ink)}
+  .demo .statement__label,.demo .statement__audience{font-size:.75rem;letter-spacing:.08em;font-weight:700}.demo .statement__audience{text-align:right}.demo .statement__text{font-size:clamp(1.4rem,2.2vw,2.3rem);line-height:1.6;letter-spacing:-.025em}
+  .demo .section{padding:clamp(4rem,8vw,8rem) clamp(1.5rem,7vw,7rem)}.demo .section__head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem}.demo h2{font-size:clamp(2.1rem,4vw,4.2rem);letter-spacing:-.05em;margin-top:1.3rem}.demo h2 em{font-style:normal;color:var(--demo-accent)}.demo .section__head>p{max-width:17rem;line-height:1.8;opacity:.7}
+  .demo .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--demo-ink);border-left:1px solid var(--demo-ink)}.demo .service{min-height:18rem;border-right:1px solid var(--demo-ink);border-bottom:1px solid var(--demo-ink);padding:2rem;position:relative;display:flex;flex-direction:column;align-items:flex-start}.demo .service__number{font-size:.75rem;color:var(--demo-accent);font-weight:700}.demo .service h3{font-size:1.5rem;margin:3rem 0 1rem}.demo .service p{line-height:1.8;opacity:.75;font-size:.93rem}.demo .service__arrow{position:absolute;top:1.6rem;right:1.8rem;font-size:1.4rem}
+  .demo .process{background:var(--demo-ink);color:var(--demo-paper)}.demo .process .eyebrow{color:var(--demo-paper);opacity:.65}.demo .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}.demo .step{border-top:1px solid currentColor;padding-top:1.5rem;display:flex;gap:1.5rem}.demo .step>span{font-size:.8rem;opacity:.5}.demo .step h3{font-size:1.35rem;margin-bottom:1rem}.demo .step p{line-height:1.85;opacity:.7;font-size:.9rem}
+  .demo .about{display:grid;grid-template-columns:1fr 1fr;gap:4rem}.demo .about>div:nth-child(2)>p:first-child{font-size:1.25rem;line-height:1.9}.demo .about__note{font-size:.88rem;opacity:.65;line-height:1.8;margin:1.5rem 0 2rem}
+  .demo--1 .hero{grid-template-columns:.9fr 1.1fr}.demo--1 .hero__art{order:-1}.demo--1 .art__frame{border-radius:50%;aspect-ratio:1;justify-content:center;align-items:center;gap:1rem}.demo--1 .art__symbol{font-weight:700;transform:rotate(-12deg)}
+  .demo--2 .hero{grid-template-columns:1fr}.demo--2 .hero__text{min-height:32rem}.demo--2 h1{max-width:15ch}.demo--2 .hero__art{min-height:17rem}.demo--2 .art__frame{aspect-ratio:auto;width:100%;min-height:10rem;flex-direction:row;align-items:center}.demo--2 .art__symbol{font-size:9rem}
+  .demo--3 .hero__art{background:var(--demo-ink);color:var(--demo-paper)}.demo--3 .art__frame{border-color:var(--demo-paper)}.demo--3 .art__symbol{color:var(--demo-paper)}.demo--3 .hero__art:after{background:var(--demo-paper)}
+  @media(max-width:800px){.demo .hero,.demo--1 .hero{grid-template-columns:1fr}.demo--1 .hero__art{order:0}.demo .hero__art{min-height:20rem}.demo .art__frame{max-height:18rem}.demo .statement{grid-template-columns:1fr;gap:1.2rem}.demo .statement__audience{text-align:left}.demo .service-grid,.demo .steps{grid-template-columns:1fr}.demo .about{grid-template-columns:1fr;gap:1rem}.demo .section__head{display:block}.demo .section__head>p{margin-top:1rem}.demo .service{min-height:13rem}}
+</style>

@@ -1,0 +1,46 @@
+{
+  "name": "Northstar Finance",
+  "industry": "Financial Advisory",
+  "eyebrow": "Financial Advisory / WEBSITE CONCEPT",
+  "headline": "Make the numbers make sense",
+  "intro": "An approachable presentation of financial organization, budgeting, and business analysis for small teams.",
+  "promise": "Clear numbers help owners make steadier decisions about what comes next.",
+  "audience": "small businesses seeking financial clarity",
+  "services": [
+    {
+      "title": "Financial organization",
+      "detail": "Bring income, costs, and core reports into a readable picture."
+    },
+    {
+      "title": "Budget planning",
+      "detail": "Build a framework that connects spending to priorities."
+    },
+    {
+      "title": "Business review",
+      "detail": "Use trends to spot questions worth investigating further."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Northstar Finance is a website concept for the financial advisory sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#1e3a50",
+    "paper": "#f1f5f3",
+    "accent": "#5b9c8b",
+    "soft": "#dce8e3"
+  },
+  "layout": 2,
+  "index": 15
+}

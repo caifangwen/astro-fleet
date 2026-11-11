@@ -1,0 +1,21 @@
+{
+  "name": "fleet-legal",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "lint": "astro check"
+  },
+  "dependencies": {
+    "astro": "^6.1.7",
+    "@astro-fleet/shared-ui": "workspace:*",
+    "@astro-fleet/config": "workspace:*"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "typescript": "^5"
+  }
+}

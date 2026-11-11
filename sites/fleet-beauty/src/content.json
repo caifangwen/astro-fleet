@@ -1,0 +1,46 @@
+{
+  "name": "Mira Beauty",
+  "industry": "Beauty Studio",
+  "eyebrow": "Beauty Studio / WEBSITE CONCEPT",
+  "headline": "Make time for yourself",
+  "intro": "A calm, clear introduction to personal care experiences and the simple choices behind them.",
+  "promise": "Begin with a conversation about what feels right, then make each visit more comfortable.",
+  "audience": "people seeking a moment of care",
+  "services": [
+    {
+      "title": "Care experiences",
+      "detail": "Understand the steps and comfort considerations in each service."
+    },
+    {
+      "title": "Service choices",
+      "detail": "Compare different options in straightforward language."
+    },
+    {
+      "title": "Everyday routines",
+      "detail": "Find simple care habits that fit into real life."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Mira Beauty is a website concept for the beauty studio sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#563e45",
+    "paper": "#faf1ef",
+    "accent": "#bd7c83",
+    "soft": "#f0dedf"
+  },
+  "layout": 0,
+  "index": 13
+}

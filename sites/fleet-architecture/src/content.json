@@ -1,0 +1,46 @@
+{
+  "name": "Formline Studio",
+  "industry": "Architecture",
+  "eyebrow": "Architecture / WEBSITE CONCEPT",
+  "headline": "Spaces shaped around living",
+  "intro": "From home renovations to public places, we connect practical needs, site conditions, and lasting value through clear design.",
+  "promise": "Good architecture begins by listening, then turns complex constraints into places people can truly use.",
+  "audience": "people who care about better spaces",
+  "services": [
+    {
+      "title": "Spatial planning",
+      "detail": "Map daily routines, movement, and site constraints before drawing a solution."
+    },
+    {
+      "title": "Architectural concepts",
+      "detail": "Bring form, daylight, and materials together in a coherent proposal."
+    },
+    {
+      "title": "Project coordination",
+      "detail": "Use drawings and clear checkpoints to carry the design intent through delivery."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Formline Studio is a website concept for the architecture sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#173e38",
+    "paper": "#f3f1e8",
+    "accent": "#c5744e",
+    "soft": "#d6ded6"
+  },
+  "layout": 0,
+  "index": 1
+}

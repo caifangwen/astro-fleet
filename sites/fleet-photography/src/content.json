@@ -1,0 +1,46 @@
+{
+  "name": "Afterlight Studio",
+  "industry": "Photography",
+  "eyebrow": "Photography / WEBSITE CONCEPT",
+  "headline": "Hold on to the light",
+  "intro": "A simple portfolio concept for portraits, brand stories, and spaces, with room for each subject to speak for itself.",
+  "promise": "Every meaningful photograph starts with observing the person or place in front of the lens.",
+  "audience": "people and brands seeking honest imagery",
+  "services": [
+    {
+      "title": "Portraits",
+      "detail": "Create space for natural expression and genuine moments."
+    },
+    {
+      "title": "Brand imagery",
+      "detail": "Build a consistent visual language around a product or story."
+    },
+    {
+      "title": "Spaces",
+      "detail": "Use composition and light to show how a place feels in use."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Afterlight Studio is a website concept for the photography sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#292b34",
+    "paper": "#f4f1eb",
+    "accent": "#b68167",
+    "soft": "#dedbd9"
+  },
+  "layout": 2,
+  "index": 11
+}

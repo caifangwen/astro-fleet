@@ -1,0 +1,46 @@
+{
+  "name": "Between Pages",
+  "industry": "Independent Bookstore",
+  "eyebrow": "Independent Bookstore / WEBSITE CONCEPT",
+  "headline": "Find a new direction in a book",
+  "intro": "Discover themed reading lists, small gatherings, and a place designed for lingering among ideas.",
+  "promise": "A good bookstore makes reading part of everyday connection.",
+  "audience": "readers who enjoy discovery and conversation",
+  "services": [
+    {
+      "title": "Reading lists",
+      "detail": "Follow fresh routes through culture, design, and everyday life."
+    },
+    {
+      "title": "Book gatherings",
+      "detail": "Explore conversations and small events built around stories."
+    },
+    {
+      "title": "The space",
+      "detail": "Find corners for quiet reading and easy conversation."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Between Pages is a website concept for the independent bookstore sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#3b414d",
+    "paper": "#f6f1e7",
+    "accent": "#bd7d58",
+    "soft": "#e8dfd2"
+  },
+  "layout": 1,
+  "index": 18
+}

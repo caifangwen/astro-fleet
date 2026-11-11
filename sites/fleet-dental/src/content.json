@@ -1,0 +1,46 @@
+{
+  "name": "Clearpath Dental",
+  "industry": "Dental Care",
+  "eyebrow": "Dental Care / WEBSITE CONCEPT",
+  "headline": "A calmer path to dental care",
+  "intro": "Clear visit guidance, a welcoming experience, and plain-language information make it easier to understand dental care.",
+  "promise": "Help people understand the process before they choose their next step.",
+  "audience": "families seeking clear dental guidance",
+  "services": [
+    {
+      "title": "First-visit guidance",
+      "detail": "Explain what to expect, how to prepare, and what happens during an initial visit."
+    },
+    {
+      "title": "Preventive care",
+      "detail": "Introduce checkups, cleaning, and everyday habits that support long-term oral health."
+    },
+    {
+      "title": "Treatment overview",
+      "detail": "Describe common treatment paths in language patients can understand."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Clearpath Dental is a website concept for the dental care sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#194a53",
+    "paper": "#f3f8f6",
+    "accent": "#4b9e9d",
+    "soft": "#dcebe8"
+  },
+  "layout": 1,
+  "index": 2
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Waymark Logistics",
+  "industry": "Logistics",
+  "eyebrow": "Logistics / WEBSITE CONCEPT",
+  "headline": "Every delivery, clearer",
+  "intro": "Explore how transport, storage, and fulfillment fit together to support a more understandable delivery journey.",
+  "promise": "Visible milestones and clear ownership make supply-chain coordination easier.",
+  "audience": "businesses focused on reliable fulfillment",
+  "services": [
+    {
+      "title": "Transport planning",
+      "detail": "Consider shipment needs, timing, and route choices together."
+    },
+    {
+      "title": "Warehouse coordination",
+      "detail": "Connect receiving, inventory, and dispatch in a clear flow."
+    },
+    {
+      "title": "Delivery visibility",
+      "detail": "Use milestone updates to support communication and follow-up."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Waymark Logistics is a website concept for the logistics sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#263a42",
+    "paper": "#f2f4ef",
+    "accent": "#ed864f",
+    "soft": "#dae3df"
+  },
+  "layout": 1,
+  "index": 10
+}

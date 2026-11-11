@@ -1,0 +1,46 @@
+{
+  "name": "Hearthstone Legal",
+  "industry": "Legal Services",
+  "eyebrow": "Legal Services / WEBSITE CONCEPT",
+  "headline": "Clear thinking for complex matters",
+  "intro": "An approachable way to present business and personal legal services, with a transparent process and practical next steps.",
+  "promise": "Start with the facts and the goal, then discuss a path people can act on.",
+  "audience": "people and teams seeking legal clarity",
+  "services": [
+    {
+      "title": "Business compliance",
+      "detail": "Organize everyday obligations and identify areas that may need attention."
+    },
+    {
+      "title": "Contracts",
+      "detail": "Review key terms, responsibilities, and decision points in an agreement."
+    },
+    {
+      "title": "Dispute planning",
+      "detail": "Gather information and explore possible responses before taking action."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Hearthstone Legal is a website concept for the legal services sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#252d47",
+    "paper": "#f4f1e9",
+    "accent": "#a56c44",
+    "soft": "#dedbd1"
+  },
+  "layout": 2,
+  "index": 3
+}

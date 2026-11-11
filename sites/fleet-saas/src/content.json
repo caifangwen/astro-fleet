@@ -1,0 +1,46 @@
+{
+  "name": "Flowline Analytics",
+  "industry": "Data Software",
+  "eyebrow": "Data Software / WEBSITE CONCEPT",
+  "headline": "See the story in your data",
+  "intro": "Bring scattered information into focused views so teams can notice changes, share insights, and coordinate action.",
+  "promise": "A useful data product shortens the distance between seeing a problem and doing something about it.",
+  "audience": "teams making decisions together",
+  "services": [
+    {
+      "title": "Visual dashboards",
+      "detail": "Arrange the metrics that matter in a readable view."
+    },
+    {
+      "title": "Data connections",
+      "detail": "Create one place to understand information from different sources."
+    },
+    {
+      "title": "Shared reports",
+      "detail": "Give teams a common starting point for useful discussion."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Flowline Analytics is a website concept for the data software sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#122a3f",
+    "paper": "#eef5f8",
+    "accent": "#2a9fa3",
+    "soft": "#d6e9ed"
+  },
+  "layout": 0,
+  "index": 9
+}

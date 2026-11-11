@@ -1,0 +1,46 @@
+{
+  "name": "Farbound Travel",
+  "industry": "Travel Planning",
+  "eyebrow": "Travel Planning / WEBSITE CONCEPT",
+  "headline": "Follow your curiosity farther",
+  "intro": "From city walks to nature escapes, discover themed itineraries with space for the unexpected.",
+  "promise": "A useful travel plan respects time and budget while leaving room for discovery.",
+  "audience": "travelers who value deeper experiences",
+  "services": [
+    {
+      "title": "Themed routes",
+      "detail": "Explore culture, food, and landscapes through different styles of travel."
+    },
+    {
+      "title": "Trip preparation",
+      "detail": "Bring transport, weather, and pacing into one practical plan."
+    },
+    {
+      "title": "Destination notes",
+      "detail": "Find concise stories and helpful context for places worth a stop."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Farbound Travel is a website concept for the travel planning sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#1e504d",
+    "paper": "#eff5ef",
+    "accent": "#d58256",
+    "soft": "#d8e8dc"
+  },
+  "layout": 2,
+  "index": 7
+}

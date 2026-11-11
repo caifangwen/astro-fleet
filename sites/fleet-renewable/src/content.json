@@ -1,0 +1,46 @@
+{
+  "name": "Sunward Energy",
+  "industry": "Clean Energy",
+  "eyebrow": "Clean Energy / WEBSITE CONCEPT",
+  "headline": "A clearer path to clean energy",
+  "intro": "Understand distributed energy, early project assessment, and long-term operation without unnecessary jargon.",
+  "promise": "Start with the setting and the need, then explore an energy approach that fits.",
+  "audience": "organizations exploring lower-carbon options",
+  "services": [
+    {
+      "title": "Site assessment",
+      "detail": "Review energy use, location, and project goals together."
+    },
+    {
+      "title": "System planning",
+      "detail": "Compare configuration choices and important delivery stages."
+    },
+    {
+      "title": "Operations view",
+      "detail": "Understand the data and maintenance questions that matter over time."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Sunward Energy is a website concept for the clean energy sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#23534d",
+    "paper": "#f1f6ef",
+    "accent": "#d6a23f",
+    "soft": "#dce9db"
+  },
+  "layout": 2,
+  "index": 19
+}

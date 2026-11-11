@@ -1,0 +1,46 @@
+{
+  "name": "Paws & Co.",
+  "industry": "Pet Services",
+  "eyebrow": "Pet Services / WEBSITE CONCEPT",
+  "headline": "Care for the everyday together",
+  "intro": "A friendly guide to pet care, activities, and practical information for the people who share life with animals.",
+  "promise": "Understand an animal's routines while respecting the way each household lives.",
+  "audience": "families caring for pets",
+  "services": [
+    {
+      "title": "Everyday care",
+      "detail": "Explore grooming, comfort, and basic daily routines."
+    },
+    {
+      "title": "Play and activity",
+      "detail": "See ways to make room for movement, rest, and interaction."
+    },
+    {
+      "title": "Care notes",
+      "detail": "Find introductory ideas for observing and supporting pets at home."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Paws & Co. is a website concept for the pet services sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#42513b",
+    "paper": "#f8f5ec",
+    "accent": "#c5874b",
+    "soft": "#e4eadb"
+  },
+  "layout": 3,
+  "index": 12
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Ridge & Roast",
+  "industry": "Coffee Brand",
+  "eyebrow": "Coffee Brand / WEBSITE CONCEPT",
+  "headline": "Make room for a better cup",
+  "intro": "Explore coffee origins, flavor notes, brewing ideas, and the atmosphere of a place built for unhurried moments.",
+  "promise": "Great coffee grows from care for ingredients, roasting, and the way a cup is shared.",
+  "audience": "curious coffee drinkers",
+  "services": [
+    {
+      "title": "Coffee selection",
+      "detail": "Find beans by flavor profile, roast style, and preferred brewing method."
+    },
+    {
+      "title": "Brewing guides",
+      "detail": "Follow simple techniques that fit a daily routine."
+    },
+    {
+      "title": "Cafe experience",
+      "detail": "See a space designed for reading, conversation, and a short pause."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
+    },
+    {
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
+    },
+    {
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
+    }
+  ],
+  "about": "Ridge & Roast is a website concept for the coffee brand sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
+  "palette": {
+    "ink": "#3f3329",
+    "paper": "#f7efe4",
+    "accent": "#b46a3d",
+    "soft": "#eadbc7"
+  },
+  "layout": 3,
+  "index": 4
+}
