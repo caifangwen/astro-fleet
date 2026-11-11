@@ -10,6 +10,7 @@ const projects = readdirSync(join(root, 'sites'), { withFileTypes: true })
   .map((entry) => entry.name).sort();
 
 if (projects.length !== 20) throw new Error(`Expected 20 demo sites, found ${projects.length}`);
+if (!process.env.CLOUDFLARE_ACCOUNT_ID) throw new Error('Set CLOUDFLARE_ACCOUNT_ID to the intended Cloudflare account before publishing');
 
 function wrangler(args) {
   const result = spawnSync(process.platform === 'win32' ? 'wrangler.cmd' : 'wrangler', args, {
@@ -22,7 +23,7 @@ function wrangler(args) {
 // Check authentication before creating anything.
 wrangler(['whoami']);
 const existing = JSON.parse(wrangler(['pages', 'project', 'list', '--json']));
-const existingNames = new Set(existing.map((project) => project.name));
+const existingNames = new Set(existing.map((project) => project.name ?? project['Project Name']));
 const results = [];
 
 for (const project of projects) {
@@ -40,3 +41,4 @@ for (const project of projects) {
 }
 
 console.log(JSON.stringify(results, null, 2));
+
