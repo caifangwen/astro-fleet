@@ -4,6 +4,11 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const pagesHostnames = {
+  'fleet-architecture': 'fleet-architecture-dtv.pages.dev',
+  'fleet-health': 'fleet-health-7yv.pages.dev',
+  'fleet-saas': 'fleet-saas-bwv.pages.dev',
+};
 const projects = [
   ['architecture','序构建筑','建筑设计','让空间回应生活','从住宅更新到公共空间，以清晰的设计语言连接使用需求、场地环境与长期价值。','好的建筑从倾听开始，再把复杂条件转化为可居住、可使用的空间。','重视空间品质的业主与团队',['空间策划|梳理功能、动线与场地约束，形成可讨论的设计方向。','建筑方案|将体量、采光与材料整合成完整的空间提案。','项目协同|以图纸和节点沟通，帮助设计意图贯穿实施过程。'],'#173e38','#f3f1e8','#c5744e','#d6ded6'],
   ['dental','齿间计划','口腔诊所','把每一次就诊变得安心','用清楚的就诊指引、舒适的空间体验和易懂的口腔知识，呈现现代口腔服务。','让患者先理解过程，再做适合自己的选择。','关注口腔健康的家庭',['预约导览|说明初诊流程、准备事项与就诊路径。','预防护理|介绍日常检查、清洁与长期维护思路。','治疗介绍|用通俗语言展示不同问题的常见处理方向。'],'#194a53','#f3f8f6','#4b9e9d','#dcebe8'],
@@ -46,7 +51,7 @@ for (const [index, row] of projects.entries()) {
     palette: { ink,paper,accent,soft }, layout: index % 4 };
   writeFileSync(join(dir,'src','content.json'), JSON.stringify(content,null,2)+'\n');
   writeFileSync(join(dir,'src','pages','index.astro'), `---\nimport IndustryDemo from '@astro-fleet/shared-ui/src/layouts/IndustryDemo.astro';\nimport content from '../content.json';\n---\n<IndustryDemo {content} />\n`);
-  writeFileSync(join(dir,'astro.config.mjs'), `import { defineConfig } from 'astro/config';\nexport default defineConfig({ site: 'https://${id}.pages.dev', output: 'static' });\n`);
+  writeFileSync(join(dir,'astro.config.mjs'), `import { defineConfig } from 'astro/config';\nexport default defineConfig({ site: 'https://${pagesHostnames[id] ?? `${id}.pages.dev`}', output: 'static' });\n`);
   writeFileSync(join(dir,'package.json'), JSON.stringify({name:id,version:'0.1.0',private:true,type:'module',scripts:{build:'astro build',dev:'astro dev',preview:'astro preview',lint:'astro check'},dependencies:{astro:'^6.1.7','@astro-fleet/shared-ui':'workspace:*','@astro-fleet/config':'workspace:*'},devDependencies:{'@astrojs/check':'^0.9',typescript:'^5'}},null,2)+'\n');
   writeFileSync(join(dir,'public','robots.txt'), 'User-agent: *\nDisallow: /\n');
   writeFileSync(join(dir,'public','favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="${ink}"/><circle cx="32" cy="32" r="18" fill="${accent}"/></svg>\n`);

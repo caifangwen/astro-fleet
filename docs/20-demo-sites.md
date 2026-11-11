@@ -40,6 +40,6 @@ Sign in with Wrangler or set `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` 
 node scripts/deploy-demo-sites.mjs
 ```
 
-The script checks for exactly 20 sites and successful builds, lists existing Pages projects, creates missing projects, and deploys each site's `dist` directory to its own production project. Project names match the directory names, so the default URLs are `https://fleet-<industry>.pages.dev` if those names are available in the account.
+The script checks for exactly 20 sites and successful builds, lists existing Pages projects, creates missing projects, and deploys each site's `dist` directory to its own production project. Project names match the directory names. Cloudflare assigned alternate hostnames to three projects because their preferred hostnames were unavailable: `fleet-architecture-dtv.pages.dev`, `fleet-health-7yv.pages.dev`, and `fleet-saas-bwv.pages.dev`.
 
 To turn a demo into a real business site, replace the brand and service content, add real contact details and a working enquiry endpoint, set the actual domain in `astro.config.mjs`, and remove the `noindex` and `robots.txt` restrictions only after reviewing the published content.
