@@ -1,45 +1,46 @@
 {
-  "name": "青田农场",
-  "industry": "农业品牌",
-  "eyebrow": "农业品牌 / 设计示例",
-  "headline": "从土地到餐桌，看见生长",
-  "intro": "以季节、作物与种植过程为线索，展示农产品背后的日常。",
-  "promise": "尊重季节与土地，让食物的来源更清楚。",
-  "audience": "在意食物来源的家庭",
+  "name": "Greenfield Farm",
+  "industry": "Agriculture",
+  "eyebrow": "Agriculture / WEBSITE CONCEPT",
+  "headline": "See where good food begins",
+  "intro": "Follow the seasons, crops, and everyday work behind food from field to table.",
+  "promise": "Respect the land and the season, and make the story behind each ingredient easier to see.",
+  "audience": "families curious about food origins",
   "services": [
     {
-      "title": "当季作物",
-      "detail": "按季节介绍不同农产品与食用方式。"
+      "title": "Seasonal produce",
+      "detail": "Explore ingredients by harvest season and everyday use."
     },
     {
-      "title": "种植记录",
-      "detail": "展示田间管理与收获过程。"
+      "title": "Growing notes",
+      "detail": "See the work involved between planting and picking."
     },
     {
-      "title": "食材灵感",
-      "detail": "提供简洁的储存与料理建议。"
+      "title": "Kitchen ideas",
+      "detail": "Find straightforward storage and preparation suggestions."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "青田农场是一个农业品牌行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Greenfield Farm is a website concept for the agriculture sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#34523f",
     "paper": "#f4f5e9",
     "accent": "#d09442",
     "soft": "#dce5ce"
   },
-  "layout": 1
+  "layout": 1,
+  "index": 14
 }

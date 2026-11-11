@@ -1,45 +1,46 @@
 {
-  "name": "页间书店",
-  "industry": "独立书店",
-  "eyebrow": "独立书店 / 设计示例",
-  "headline": "在书页之间，发现新方向",
-  "intro": "用主题书单、阅读活动与空间介绍，构建一处愿意停留的阅读场所。",
-  "promise": "好书店让阅读成为人与想法相遇的日常。",
-  "audience": "喜欢阅读与交流的人",
+  "name": "Between Pages",
+  "industry": "Independent Bookstore",
+  "eyebrow": "Independent Bookstore / WEBSITE CONCEPT",
+  "headline": "Find a new direction in a book",
+  "intro": "Discover themed reading lists, small gatherings, and a place designed for lingering among ideas.",
+  "promise": "A good bookstore makes reading part of everyday connection.",
+  "audience": "readers who enjoy discovery and conversation",
   "services": [
     {
-      "title": "主题书单",
-      "detail": "围绕生活、设计与人文组织阅读线索。"
+      "title": "Reading lists",
+      "detail": "Follow fresh routes through culture, design, and everyday life."
     },
     {
-      "title": "阅读活动",
-      "detail": "呈现分享会与小型聚会的活动形式。"
+      "title": "Book gatherings",
+      "detail": "Explore conversations and small events built around stories."
     },
     {
-      "title": "空间介绍",
-      "detail": "展示安静阅读和自在交流的不同角落。"
+      "title": "The space",
+      "detail": "Find corners for quiet reading and easy conversation."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "页间书店是一个独立书店行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Between Pages is a website concept for the independent bookstore sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#3b414d",
     "paper": "#f6f1e7",
     "accent": "#bd7d58",
     "soft": "#e8dfd2"
   },
-  "layout": 1
+  "layout": 1,
+  "index": 18
 }

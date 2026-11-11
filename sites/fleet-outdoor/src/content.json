@@ -1,45 +1,46 @@
 {
-  "name": "野径装备",
-  "industry": "户外用品",
-  "eyebrow": "户外用品 / 设计示例",
-  "headline": "走向户外，轻装出发",
-  "intro": "围绕徒步、露营与周末探索，整理装备类别和使用场景。",
-  "promise": "让装备选择回到真实的路线、天气与个人习惯。",
-  "audience": "准备走进自然的户外爱好者",
+  "name": "Trailkind",
+  "industry": "Outdoor Equipment",
+  "eyebrow": "Outdoor Equipment / WEBSITE CONCEPT",
+  "headline": "Go farther, carry less",
+  "intro": "Explore gear for hiking, camping, and weekend escapes through the real conditions in which it gets used.",
+  "promise": "Choose equipment for the route, weather, and habits you actually have.",
+  "audience": "people getting outside more often",
   "services": [
     {
-      "title": "徒步装备",
-      "detail": "按路线长度与天气理解基础装备组合。"
+      "title": "Hiking essentials",
+      "detail": "Match basic gear to route length and likely conditions."
     },
     {
-      "title": "露营收纳",
-      "detail": "展示便携、耐用与易整理的用品思路。"
+      "title": "Camp organization",
+      "detail": "Explore practical ideas for portable and durable storage."
     },
     {
-      "title": "出行指南",
-      "detail": "提供行前检查和户外使用的基本建议。"
+      "title": "Trip guides",
+      "detail": "Use simple preparation checklists before heading out."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "野径装备是一个户外用品行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Trailkind is a website concept for the outdoor equipment sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#2d4238",
     "paper": "#f1f1e9",
     "accent": "#c77d43",
     "soft": "#dce5d9"
   },
-  "layout": 0
+  "layout": 0,
+  "index": 17
 }

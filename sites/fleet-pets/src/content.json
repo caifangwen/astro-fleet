@@ -1,45 +1,46 @@
 {
-  "name": "爪印日常",
-  "industry": "宠物服务",
-  "eyebrow": "宠物服务 / 设计示例",
-  "headline": "陪伴，从照顾每一天开始",
-  "intro": "面向宠物家庭展示日常护理、活动与知识内容，传递友好的服务体验。",
-  "promise": "理解动物的习惯，也尊重每个家庭的生活方式。",
-  "audience": "关心宠物日常的家庭",
+  "name": "Paws & Co.",
+  "industry": "Pet Services",
+  "eyebrow": "Pet Services / WEBSITE CONCEPT",
+  "headline": "Care for the everyday together",
+  "intro": "A friendly guide to pet care, activities, and practical information for the people who share life with animals.",
+  "promise": "Understand an animal's routines while respecting the way each household lives.",
+  "audience": "families caring for pets",
   "services": [
     {
-      "title": "日常护理",
-      "detail": "介绍清洁、梳理与舒适照护的基础安排。"
+      "title": "Everyday care",
+      "detail": "Explore grooming, comfort, and basic daily routines."
     },
     {
-      "title": "活动空间",
-      "detail": "展示适合互动与放松的活动场景。"
+      "title": "Play and activity",
+      "detail": "See ways to make room for movement, rest, and interaction."
     },
     {
-      "title": "养护知识",
-      "detail": "整理日常观察和生活管理的入门内容。"
+      "title": "Care notes",
+      "detail": "Find introductory ideas for observing and supporting pets at home."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "爪印日常是一个宠物服务行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Paws & Co. is a website concept for the pet services sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#42513b",
     "paper": "#f8f5ec",
     "accent": "#c5874b",
     "soft": "#e4eadb"
   },
-  "layout": 3
+  "layout": 3,
+  "index": 12
 }

@@ -1,29 +1,29 @@
-# 20 industry demo sites
+# 20 English industry demo sites
 
-These one-page Chinese-language examples are generated from `scripts/generate-demo-sites.mjs` and share `packages/shared-ui/src/layouts/IndustryDemo.astro`. Each `sites/fleet-*` workspace has its own content, palette, layout variant, favicon, and independent static build. They are explicitly labelled as demonstrations, have no enquiry form or fabricated contact details, and emit `noindex` plus `robots.txt` disallow rules.
+These one-page English examples are generated from `scripts/generate-demo-sites.mjs` and share `packages/shared-ui/src/layouts/IndustryDemo.astro`. Each `sites/fleet-*` workspace has its own content, palette, layout variant, favicon, and independent static build. All sites are labelled as demonstrations. They have no enquiry form or fabricated contact details, and emit `noindex` plus `robots.txt` disallow rules.
 
-| Project | Industry | Brand |
-| --- | --- | --- |
-| fleet-architecture | Architecture | 序构建筑 |
-| fleet-dental | Dental | 齿间计划 |
-| fleet-legal | Legal | 衡理事务 |
-| fleet-coffee | Coffee | 山序咖啡 |
-| fleet-fitness | Fitness | 动量实验室 |
-| fleet-education | Education | 知阶学堂 |
-| fleet-travel | Travel | 远行地图 |
-| fleet-interior | Interior design | 栖物设计 |
-| fleet-saas | Data software | 流线数据 |
-| fleet-logistics | Logistics | 路标物流 |
-| fleet-photography | Photography | 留光影像 |
-| fleet-pets | Pet services | 爪印日常 |
-| fleet-beauty | Beauty | 见己美学 |
-| fleet-agriculture | Agriculture | 青田农场 |
-| fleet-finance | Finance | 有数财务 |
-| fleet-events | Event planning | 此刻策划 |
-| fleet-outdoor | Outdoor equipment | 野径装备 |
-| fleet-bookstore | Bookstore | 页间书店 |
-| fleet-renewable | Clean energy | 向阳能源 |
-| fleet-health | Health management | 安序健康 |
+| Project | Industry | Brand | Live site |
+| --- | --- | --- | --- |
+| fleet-agriculture | Agriculture | Greenfield Farm | [fleet-agriculture.pages.dev](https://fleet-agriculture.pages.dev/) |
+| fleet-architecture | Architecture | Formline Studio | [fleet-architecture-dtv.pages.dev](https://fleet-architecture-dtv.pages.dev/) |
+| fleet-beauty | Beauty Studio | Mira Beauty | [fleet-beauty.pages.dev](https://fleet-beauty.pages.dev/) |
+| fleet-bookstore | Independent Bookstore | Between Pages | [fleet-bookstore.pages.dev](https://fleet-bookstore.pages.dev/) |
+| fleet-coffee | Coffee Brand | Ridge & Roast | [fleet-coffee.pages.dev](https://fleet-coffee.pages.dev/) |
+| fleet-dental | Dental Care | Clearpath Dental | [fleet-dental.pages.dev](https://fleet-dental.pages.dev/) |
+| fleet-education | Education | Stepwise Academy | [fleet-education.pages.dev](https://fleet-education.pages.dev/) |
+| fleet-events | Event Planning | Gatherwell Events | [fleet-events.pages.dev](https://fleet-events.pages.dev/) |
+| fleet-finance | Financial Advisory | Northstar Finance | [fleet-finance.pages.dev](https://fleet-finance.pages.dev/) |
+| fleet-fitness | Fitness Studio | Motion Lab | [fleet-fitness.pages.dev](https://fleet-fitness.pages.dev/) |
+| fleet-health | Health Management | Wellnest Health | [fleet-health-7yv.pages.dev](https://fleet-health-7yv.pages.dev/) |
+| fleet-interior | Interior Design | Nest & Form | [fleet-interior.pages.dev](https://fleet-interior.pages.dev/) |
+| fleet-legal | Legal Services | Hearthstone Legal | [fleet-legal.pages.dev](https://fleet-legal.pages.dev/) |
+| fleet-logistics | Logistics | Waymark Logistics | [fleet-logistics.pages.dev](https://fleet-logistics.pages.dev/) |
+| fleet-outdoor | Outdoor Equipment | Trailkind | [fleet-outdoor.pages.dev](https://fleet-outdoor.pages.dev/) |
+| fleet-pets | Pet Services | Paws & Co. | [fleet-pets.pages.dev](https://fleet-pets.pages.dev/) |
+| fleet-photography | Photography | Afterlight Studio | [fleet-photography.pages.dev](https://fleet-photography.pages.dev/) |
+| fleet-renewable | Clean Energy | Sunward Energy | [fleet-renewable.pages.dev](https://fleet-renewable.pages.dev/) |
+| fleet-saas | Data Software | Flowline Analytics | [fleet-saas-bwv.pages.dev](https://fleet-saas-bwv.pages.dev/) |
+| fleet-travel | Travel Planning | Farbound Travel | [fleet-travel.pages.dev](https://fleet-travel.pages.dev/) |
 
 ## Build
 
@@ -40,6 +40,6 @@ Sign in with Wrangler or set `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` 
 node scripts/deploy-demo-sites.mjs
 ```
 
-The script checks for exactly 20 sites and successful builds, lists existing Pages projects, creates missing projects, and deploys each site's `dist` directory to its own production project. Project names match the directory names. Cloudflare assigned alternate hostnames to three projects because their preferred hostnames were unavailable: `fleet-architecture-dtv.pages.dev`, `fleet-health-7yv.pages.dev`, and `fleet-saas-bwv.pages.dev`.
+The script checks for exactly 20 sites and successful builds, lists existing Pages projects, creates missing projects, and deploys each site's `dist` directory to its own production project. Use `--from=fleet-name` to resume after an interruption. Cloudflare assigned alternate hostnames to three projects because their preferred hostnames were unavailable; the live links above and each site's `astro.config.mjs` use those assigned domains.
 
 To turn a demo into a real business site, replace the brand and service content, add real contact details and a working enquiry endpoint, set the actual domain in `astro.config.mjs`, and remove the `noindex` and `robots.txt` restrictions only after reviewing the published content.

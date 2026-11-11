@@ -1,45 +1,46 @@
 {
-  "name": "此刻策划",
-  "industry": "活动策划",
-  "eyebrow": "活动策划 / 设计示例",
-  "headline": "让每场相聚都有意义",
-  "intro": "从主题构想到现场执行，呈现品牌活动、社区聚会与小型庆典的策划路径。",
-  "promise": "活动的核心是让人与人、人与内容真正相遇。",
-  "audience": "筹备线下体验的团队",
+  "name": "Gatherwell Events",
+  "industry": "Event Planning",
+  "eyebrow": "Event Planning / WEBSITE CONCEPT",
+  "headline": "Make every gathering count",
+  "intro": "From a first theme to the final run of show, explore a thoughtful path for brand events and community gatherings.",
+  "promise": "An event works best when people genuinely connect with each other and the ideas in the room.",
+  "audience": "teams creating in-person experiences",
   "services": [
     {
-      "title": "主题设计",
-      "detail": "明确活动目标、受众与核心体验。"
+      "title": "Theme development",
+      "detail": "Define the purpose, audience, and feeling of an event."
     },
     {
-      "title": "流程编排",
-      "detail": "安排内容节奏、场地动线和参与方式。"
+      "title": "Program design",
+      "detail": "Shape the content, venue flow, and ways people participate."
     },
     {
-      "title": "现场协同",
-      "detail": "梳理分工、物料与当天的关键节点。"
+      "title": "On-site coordination",
+      "detail": "Keep roles, materials, and important moments aligned."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "此刻策划是一个活动策划行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Gatherwell Events is a website concept for the event planning sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#3b2d48",
     "paper": "#f7f2ef",
     "accent": "#cb7e5c",
     "soft": "#e5dbe8"
   },
-  "layout": 3
+  "layout": 3,
+  "index": 16
 }

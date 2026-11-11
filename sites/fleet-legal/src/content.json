@@ -1,45 +1,46 @@
 {
-  "name": "衡理事务",
-  "industry": "法律服务",
-  "eyebrow": "法律服务 / 设计示例",
-  "headline": "复杂问题，清晰回应",
-  "intro": "面向企业经营与个人事务，展示专业服务范围、合作流程和沟通方式。",
-  "promise": "先厘清事实与目标，再讨论可执行的路径。",
-  "audience": "需要明确法律支持的客户",
+  "name": "Hearthstone Legal",
+  "industry": "Legal Services",
+  "eyebrow": "Legal Services / WEBSITE CONCEPT",
+  "headline": "Clear thinking for complex matters",
+  "intro": "An approachable way to present business and personal legal services, with a transparent process and practical next steps.",
+  "promise": "Start with the facts and the goal, then discuss a path people can act on.",
+  "audience": "people and teams seeking legal clarity",
   "services": [
     {
-      "title": "企业合规",
-      "detail": "围绕日常经营建立清晰的风险识别框架。"
+      "title": "Business compliance",
+      "detail": "Organize everyday obligations and identify areas that may need attention."
     },
     {
-      "title": "合同事务",
-      "detail": "梳理交易条款、履约节点与沟通重点。"
+      "title": "Contracts",
+      "detail": "Review key terms, responsibilities, and decision points in an agreement."
     },
     {
-      "title": "争议应对",
-      "detail": "通过材料整理和策略讨论准备下一步行动。"
+      "title": "Dispute planning",
+      "detail": "Gather information and explore possible responses before taking action."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "衡理事务是一个法律服务行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Hearthstone Legal is a website concept for the legal services sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#252d47",
     "paper": "#f4f1e9",
     "accent": "#a56c44",
     "soft": "#dedbd1"
   },
-  "layout": 2
+  "layout": 2,
+  "index": 3
 }

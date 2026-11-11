@@ -1,45 +1,46 @@
 {
-  "name": "知阶学堂",
-  "industry": "教育机构",
-  "eyebrow": "教育机构 / 设计示例",
-  "headline": "让学习有路径可循",
-  "intro": "为不同阶段的学习者整理课程方向、学习方法和成长支持。",
-  "promise": "将目标拆成可理解、可实践、可回顾的每一步。",
-  "audience": "希望持续成长的学习者",
+  "name": "Stepwise Academy",
+  "industry": "Education",
+  "eyebrow": "Education / WEBSITE CONCEPT",
+  "headline": "Learning with a clear next step",
+  "intro": "Courses, practice, and feedback come together in an easy-to-follow path for learners at different stages.",
+  "promise": "Break big goals into steps people can understand, practice, and revisit.",
+  "audience": "lifelong learners",
   "services": [
     {
-      "title": "课程体系",
-      "detail": "按主题和阶段组织清晰的学习内容。"
+      "title": "Course pathways",
+      "detail": "Explore subjects organized by topic and level."
     },
     {
-      "title": "学习支持",
-      "detail": "提供练习、反馈与复盘的参考框架。"
+      "title": "Learning support",
+      "detail": "Use practice and feedback to make progress visible."
     },
     {
-      "title": "成长路径",
-      "detail": "帮助学习者看见当前阶段与下一步方向。"
+      "title": "Progress planning",
+      "detail": "Understand your current stage and choose a useful next step."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "知阶学堂是一个教育机构行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Stepwise Academy is a website concept for the education sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#28446a",
     "paper": "#f4f3eb",
     "accent": "#e4a449",
     "soft": "#dce5eb"
   },
-  "layout": 1
+  "layout": 1,
+  "index": 6
 }

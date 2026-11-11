@@ -1,45 +1,46 @@
 {
-  "name": "向阳能源",
-  "industry": "清洁能源",
-  "eyebrow": "清洁能源 / 设计示例",
-  "headline": "让能源选择更清晰",
-  "intro": "以易理解的方式介绍分布式能源、项目评估与长期运维的基本路径。",
-  "promise": "从场景和需求出发，讨论适合的能源方案。",
-  "audience": "探索低碳转型的组织",
+  "name": "Sunward Energy",
+  "industry": "Clean Energy",
+  "eyebrow": "Clean Energy / WEBSITE CONCEPT",
+  "headline": "A clearer path to clean energy",
+  "intro": "Understand distributed energy, early project assessment, and long-term operation without unnecessary jargon.",
+  "promise": "Start with the setting and the need, then explore an energy approach that fits.",
+  "audience": "organizations exploring lower-carbon options",
   "services": [
     {
-      "title": "场景评估",
-      "detail": "梳理用能特点、场地条件与项目目标。"
+      "title": "Site assessment",
+      "detail": "Review energy use, location, and project goals together."
     },
     {
-      "title": "方案设计",
-      "detail": "比较系统配置和实施阶段的关键问题。"
+      "title": "System planning",
+      "detail": "Compare configuration choices and important delivery stages."
     },
     {
-      "title": "运维观察",
-      "detail": "介绍运行数据与日常维护的关注点。"
+      "title": "Operations view",
+      "detail": "Understand the data and maintenance questions that matter over time."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "向阳能源是一个清洁能源行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Sunward Energy is a website concept for the clean energy sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#23534d",
     "paper": "#f1f6ef",
     "accent": "#d6a23f",
     "soft": "#dce9db"
   },
-  "layout": 2
+  "layout": 2,
+  "index": 19
 }

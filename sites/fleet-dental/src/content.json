@@ -1,45 +1,46 @@
 {
-  "name": "齿间计划",
-  "industry": "口腔诊所",
-  "eyebrow": "口腔诊所 / 设计示例",
-  "headline": "把每一次就诊变得安心",
-  "intro": "用清楚的就诊指引、舒适的空间体验和易懂的口腔知识，呈现现代口腔服务。",
-  "promise": "让患者先理解过程，再做适合自己的选择。",
-  "audience": "关注口腔健康的家庭",
+  "name": "Clearpath Dental",
+  "industry": "Dental Care",
+  "eyebrow": "Dental Care / WEBSITE CONCEPT",
+  "headline": "A calmer path to dental care",
+  "intro": "Clear visit guidance, a welcoming experience, and plain-language information make it easier to understand dental care.",
+  "promise": "Help people understand the process before they choose their next step.",
+  "audience": "families seeking clear dental guidance",
   "services": [
     {
-      "title": "预约导览",
-      "detail": "说明初诊流程、准备事项与就诊路径。"
+      "title": "First-visit guidance",
+      "detail": "Explain what to expect, how to prepare, and what happens during an initial visit."
     },
     {
-      "title": "预防护理",
-      "detail": "介绍日常检查、清洁与长期维护思路。"
+      "title": "Preventive care",
+      "detail": "Introduce checkups, cleaning, and everyday habits that support long-term oral health."
     },
     {
-      "title": "治疗介绍",
-      "detail": "用通俗语言展示不同问题的常见处理方向。"
+      "title": "Treatment overview",
+      "detail": "Describe common treatment paths in language patients can understand."
     }
   ],
   "steps": [
     {
-      "title": "了解需求",
-      "detail": "先讨论目标、使用场景与现有条件，明确真正需要解决的问题。"
+      "title": "Discover",
+      "detail": "Start with goals, context, and constraints to understand what matters most."
     },
     {
-      "title": "形成方案",
-      "detail": "将信息整理成清晰的服务路径，让选择和重点一目了然。"
+      "title": "Shape a plan",
+      "detail": "Turn what we learn into a clear direction with useful choices and priorities."
     },
     {
-      "title": "持续优化",
-      "detail": "根据反馈调整内容和体验，让方案随着需求一起成长。"
+      "title": "Refine",
+      "detail": "Use feedback to improve the experience as needs change over time."
     }
   ],
-  "about": "齿间计划是一个口腔诊所行业的网站概念。页面用简洁的叙事、明确的服务说明和易读的视觉层级，展示这一行业可以如何在线上表达自己的价值。",
+  "about": "Clearpath Dental is a website concept for the dental care sector. Clear storytelling, practical service descriptions, and an easy-to-read visual hierarchy show how a brand in this field could present its value online.",
   "palette": {
     "ink": "#194a53",
     "paper": "#f3f8f6",
     "accent": "#4b9e9d",
     "soft": "#dcebe8"
   },
-  "layout": 1
+  "layout": 1,
+  "index": 2
 }

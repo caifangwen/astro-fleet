@@ -15,31 +15,32 @@ export interface DemoContent {
   about: string;
   palette: { ink: string; paper: string; accent: string; soft: string };
   layout: number;
+  index: number;
 }
 
 const { content } = Astro.props as { content: DemoContent };
 const navigation: MenuItem[] = [
-  { label: '首页', href: '/' },
-  { label: '服务', href: '#services' },
-  { label: '流程', href: '#process' },
-  { label: '关于', href: '#about' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '#services' },
+  { label: 'Process', href: '#process' },
+  { label: 'About', href: '#about' },
 ];
 const footerColumns = [
-  { title: '浏览', links: navigation.map(({ label, href }) => ({ label, href })) },
+  { title: 'Explore', links: navigation.map(({ label, href }) => ({ label, href })) },
 ];
 const cssVars = `--demo-ink:${content.palette.ink};--demo-paper:${content.palette.paper};--demo-accent:${content.palette.accent};--demo-soft:${content.palette.soft};`;
 ---
 
 <BaseLayout
-  lang="zh-CN"
-  title={`${content.name} · ${content.industry}行业示例站`}
+  lang="en"
+  title={`${content.name} · ${content.industry} Demo`}
   description={content.intro}
   noindex
   {navigation}
   {footerColumns}
   siteName={content.name}
-  tagline="行业网站设计示例 · 内容仅用于演示"
-  ctaText="查看服务"
+  tagline="Industry website concept · For demonstration only"
+  ctaText="Explore services"
   ctaHref="#services"
 >
   <div class={`demo demo--${content.layout}`} style={cssVars}>
@@ -49,40 +50,40 @@ const cssVars = `--demo-ink:${content.palette.ink};--demo-paper:${content.palett
         <h1 id="hero-heading">{content.headline}</h1>
         <p class="hero__intro">{content.intro}</p>
         <div class="hero__actions">
-          <a class="button button--primary" href="#services">探索服务 <span aria-hidden="true">↗</span></a>
-          <a class="button button--text" href="#about">了解品牌 <span aria-hidden="true">→</span></a>
+          <a class="button button--primary" href="#services">Explore services <span aria-hidden="true">↗</span></a>
+          <a class="button button--text" href="#about">About this concept <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <div class="hero__art" aria-hidden="true">
-        <div class="art__frame"><span class="art__index">0{content.layout + 1} / 20</span><span class="art__symbol">{content.name.slice(0, 1)}</span><span class="art__caption">{content.industry}</span></div>
+        <div class="art__frame"><span class="art__index">{String(content.index).padStart(2, '0')} / 20</span><span class="art__symbol">{content.name.slice(0, 1)}</span><span class="art__caption">{content.industry}</span></div>
       </div>
     </section>
 
-    <section class="statement" aria-label="服务定位">
-      <p class="statement__label">我们的主张 / OUR APPROACH</p>
+    <section class="statement" aria-label="Our approach">
+      <p class="statement__label">OUR APPROACH / WHAT MATTERS</p>
       <p class="statement__text">{content.promise}</p>
-      <p class="statement__audience">为{content.audience}而设计</p>
+      <p class="statement__audience">Designed for {content.audience}</p>
     </section>
 
     <section id="services" class="section services">
-      <div class="section__head"><div><p class="eyebrow">01 / 核心服务</p><h2>把专业能力<br /><em>带到每个细节</em></h2></div><p>从需求出发，提供清晰、可理解的服务组合。</p></div>
+      <div class="section__head"><div><p class="eyebrow">01 / SERVICES</p><h2>Thoughtful work,<br /><em>made tangible.</em></h2></div><p>Clear offerings shaped around the needs of this industry.</p></div>
       <div class="service-grid">
         {content.services.map((service, i) => <article class="service"><span class="service__number">0{i + 1}</span><h3>{service.title}</h3><p>{service.detail}</p><span class="service__arrow" aria-hidden="true">↗</span></article>)}
       </div>
     </section>
 
     <section id="process" class="section process">
-      <div class="section__head"><div><p class="eyebrow">02 / 合作流程</p><h2>简单、透明的<br /><em>三步路径</em></h2></div></div>
+      <div class="section__head"><div><p class="eyebrow">02 / PROCESS</p><h2>A clear path<br /><em>from idea to action.</em></h2></div></div>
       <div class="steps">{content.steps.map((step, i) => <article class="step"><span>0{i + 1}</span><div><h3>{step.title}</h3><p>{step.detail}</p></div></article>)}</div>
     </section>
 
-    <section id="about" class="section about"><div><p class="eyebrow">03 / 关于这个示例</p><h2>{content.name}</h2></div><div><p>{content.about}</p><p class="about__note">本站是基于 Astro Fleet 构建的行业网站示例。品牌、服务描述和视觉内容仅作演示；没有真实业务、客户评价或在线咨询功能。</p><a class="button button--primary" href="#hero-heading">返回顶部 ↑</a></div></section>
+    <section id="about" class="section about"><div><p class="eyebrow">03 / ABOUT THIS CONCEPT</p><h2>{content.name}</h2></div><div><p>{content.about}</p><p class="about__note">This is an industry website concept built with Astro Fleet. The brand, services, and visuals are illustrative. It does not represent an operating business or offer a contact form.</p><a class="button button--primary" href="#hero-heading">Back to top ↑</a></div></section>
   </div>
 </BaseLayout>
 
 <style is:global>
-  .demo{--demo-ink:#18342f;--demo-paper:#f7f5ef;--demo-accent:#d35c3d;--demo-soft:#e9e6dc;color:var(--demo-ink);background:var(--demo-paper);font-family:system-ui,"Microsoft YaHei",sans-serif}
-  .demo h1,.demo h2,.demo h3{font-family:system-ui,"Microsoft YaHei",sans-serif;color:inherit;line-height:1.18}
+  .demo{--demo-ink:#18342f;--demo-paper:#f7f5ef;--demo-accent:#d35c3d;--demo-soft:#e9e6dc;color:var(--demo-ink);background:var(--demo-paper);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+  .demo h1,.demo h2,.demo h3{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:inherit;line-height:1.18}
   .demo .eyebrow{display:flex;align-items:center;gap:.75rem;font-size:.78rem;font-weight:700;letter-spacing:.13em;color:var(--demo-accent)}
   .demo .eyebrow__line{display:inline-block;width:1.8rem;height:1px;background:currentColor}
   .demo .hero{min-height:36rem;display:grid;grid-template-columns:1.15fr .85fr;overflow:hidden;border-bottom:1px solid var(--demo-ink)}
