@@ -1,482 +1,106 @@
-# Astro Fleet
+# Astro Fleet: 20 Industry Demo Sites
 
 [![CI](https://github.com/caifangwen/astro-fleet/actions/workflows/ci.yml/badge.svg)](https://github.com/caifangwen/astro-fleet/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-**One codebase, many sites.** A multi-site Astro monorepo for agencies and
-multi-brand companies.
+This repository contains 20 English, one-page industry website concepts built with Astro. Each site is an independent workspace in `sites/fleet-*`, with its own brand copy, colors, favicon, and Cloudflare Pages project. The sites share one layout in `packages/shared-ui/src/layouts/IndustryDemo.astro`.
 
-Shared components, per-site design tokens, Turborepo builds, and independent
-deployment to Cloudflare Pages, Vercel or your own VPS. Create a site in one
-command, brand it with a preset, ship it on its own domain.
+Browse the [20-site directory](docs/20-demo-sites.md) for project names, industries, brands, and Cloudflare URLs. Those URLs identify existing projects; publishing a GitHub commit alone does not update their live content.
 
-Site-wide search, consent-gated analytics and full SEO are built in and **off by
-default** — each is one instruction away. Responsive images are on: write a
-plain `<img>`, ship `<picture>` with AVIF and WebP.
+> These are design demonstrations, not real businesses. They have no contact form or invented contact details. Every demo includes `noindex` and a `robots.txt` rule that blocks indexing.
 
-**Built for AI-driven development.** The structure, typed props and single-file
-site config exist so an AI assistant can work in this repo without guessing.
-Tested extensively with [Claude Code](https://claude.ai/claude-code); works with
-Gemini CLI and others.
+## Quick start
 
-## 20 live English demo sites
-
-Explore the [20 industry demo sites](docs/20-demo-sites.md), each built from this monorepo and published as its own Cloudflare Pages project.
-
-This repository builds on the [MIT-licensed Astro Fleet project by Indivar](https://github.com/Indivar/astro-fleet).
-
----
-
-## Get started
-
-### With Claude Code
-
-The fastest path from nothing to a live site:
+Install [Bun](https://bun.sh/) and Node.js 22.12 or newer, then run:
 
 ```bash
-git clone https://github.com/Indivar/astro-fleet.git
+git clone https://github.com/caifangwen/astro-fleet.git
 cd astro-fleet
 bun install
-claude
+bun run dev --filter=fleet-agriculture
 ```
 
-Then say what you want:
-
-> Build me a site for acme.com. We fabricate structural steel for commercial
-> builders in Auckland. The buyer is a project manager comparing fabricators on
-> lead time and certification. I want them to request a quote.
-
-Claude reads [`CLAUDE.md`](CLAUDE.md) automatically and follows the whole
-process: scaffold, design, content, SEO, deploy.
-**[Build a site with Claude →](docs/build-a-site-with-claude.md)** is the
-human-readable walkthrough, with the exact sentences to type at each step.
-
-### With the CLI
+Open the local URL printed by Astro. To build all 20 demos:
 
 ```bash
-bunx create-astro-fleet         # or: npm create astro-fleet
-cd my-astro-fleet
+bun run build --filter=fleet-* --concurrency=4
+```
+
+Each build is written to `sites/<project>/dist/`. To build one site, use `bun run build --filter=fleet-agriculture`.
+
+## Edit a demo
+
+| What to change | Where |
+| --- | --- |
+| Brand, services, audience, and colors | `scripts/industry-demo-content.json` |
+| Shared page layout and visible UI text | `packages/shared-ui/src/layouts/IndustryDemo.astro` |
+| Cloudflare hostname overrides | `pagesHostnames` in `scripts/generate-demo-sites.mjs` |
+| One site's generated content | `sites/<project>/src/content.json` |
+
+The 20 site workspaces are generated from `scripts/industry-demo-content.json`. After editing that source file, refresh the generated workspaces and rebuild:
+
+```bash
+node scripts/generate-demo-sites.mjs --update
+bun run build --filter=fleet-* --concurrency=4
+```
+
+The `--update` command rewrites generated site files, including each site's `src/content.json` and `astro.config.mjs`. Edit the shared source data when a change should survive regeneration. Check the affected site's final HTML before publishing.
+
+## Publish to Cloudflare Pages
+
+The 20 demos use **direct uploads** to separate Cloudflare Pages projects. A push to this GitHub repository does not trigger a Pages deployment. Run the deployment script whenever you want the live sites to reflect a new build.
+
+1. Install [Wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/) so `wrangler` is on your `PATH`, and authenticate with `wrangler login` or a `CLOUDFLARE_API_TOKEN` authorized to manage Pages projects and deployments.
+2. Set `CLOUDFLARE_ACCOUNT_ID` to the account that owns the Pages projects. Use an environment variable; do not commit credentials.
+3. Build the demos, then run the script from the repository root:
+
+```bash
 bun install
-bun run dev
+bun run build --filter=fleet-* --concurrency=4
+
+# macOS / Linux
+export CLOUDFLARE_ACCOUNT_ID="your-account-id"
+node scripts/deploy-demo-sites.mjs
 ```
 
-Prompts for a target directory, first-site domain and design preset. Use
-`--domain` and `--preset` to skip them.
+In PowerShell, set the account ID for the current shell before running the same script:
 
-### By hand
+```powershell
+$env:CLOUDFLARE_ACCOUNT_ID = "your-account-id"
+node scripts/deploy-demo-sites.mjs
+```
+
+The script checks Wrangler authentication and confirms that exactly 20 demo workspaces exist. It creates any missing Pages projects, then uploads each site's `dist` directory to its corresponding project's `main` production branch. Re-running it updates the same projects. If a run stops partway through, resume from a project in alphabetical order:
 
 ```bash
-git clone https://github.com/Indivar/astro-fleet.git
-cd astro-fleet
-bun install
-bun run dev          # starter site at localhost:4321
+node scripts/deploy-demo-sites.mjs --from=fleet-health
 ```
 
-**Requires** Bun 1.1+ and Node 20+. A Cloudflare account is needed only to
-deploy, and it is free. Python 3 with Pillow is the one extra, and only on the
-machine that adds photos: it writes the image renditions that get committed.
-The build needs nothing beyond Bun.
-
----
-
-## Everyday commands
+To publish only one existing site after building it, use Wrangler directly:
 
 ```bash
-# Develop
-bun run dev                                    # every site (4321)
-bun run dev --filter=acme.com                  # one site
-bun run dev --filter=acme.com -- --port 4322   # a second alongside
-
-# Build
-bun run build                                  # all, in parallel
-bun run build --filter=acme.com                # one
-
-# Typecheck and lint
-bun run lint
-
-# Add a site
-bunx create-astro-fleet add acme.com saas      # or:
-./scripts/new-site.sh acme.com saas
-bun install                                     # always, after adding
-
-# Deploy
-npx wrangler pages deploy sites/acme.com/dist \
-  --project-name=acme-com --branch=main
-
-# Images (Python 3 + Pillow, once per new photo; renditions are committed)
-python3 scripts/responsive-images.py acme.com         # AVIF + WebP at 4 widths
-python3 scripts/localize-stock-images.py acme.com     # bring Unsplash/Pexels hotlinks in-house
-python3 scripts/responsive-images.py --check          # no large image without srcset
-python3 scripts/image-weight.py                       # bytes per page, before vs after
-
-# One canonical host per zone (apex -> www or the reverse)
-python3 scripts/cf-canonical-redirects.py --check
-
-# Self-hosted infrastructure
-./scripts/setup-infra.sh acme.com,other.com
+wrangler pages deploy sites/fleet-agriculture/dist --project-name fleet-agriculture --branch main
 ```
 
-| Script | Does |
-|---|---|
-| `scripts/new-site.sh` | Copies the starter into `sites/<domain>` and applies a preset |
-| `scripts/setup-infra.sh` | Generates the Caddyfile and `.env` for the self-hosted stack |
-| `scripts/responsive-images.py` | Writes AVIF and WebP renditions plus a manifest into `public/images/_r/`; `--check` fails the build on a large image without `srcset` |
-| `scripts/localize-stock-images.py` | Downloads hotlinked Unsplash and Pexels photos, writes WebP, rewrites the URLs; `--check` fails on any remaining hotlink |
-| `scripts/image-weight.py` | Per-page image bytes at 375 and 1440 px, from the built HTML |
-| `scripts/cf-canonical-redirects.py` | One 301 rule per Cloudflare zone from `infrastructure/zones.json`; `--check` verifies with HEAD requests |
-| `packages/shared-ui/scripts/search-index.mjs` | Builds the search index from the HTML that shipped |
+Direct Upload projects do not gain automatic GitHub deployments later. Moving a site to Cloudflare's Git integration requires a new Pages project.
 
----
+Cloudflare may assign a different `pages.dev` hostname when the preferred one is taken. The [site directory](docs/20-demo-sites.md) lists the assigned hostnames for the existing projects. Keep the hostname in each site's `astro.config.mjs` aligned with its actual Pages URL.
 
-## Turning features on
+After deployment, open the URLs in the [site directory](docs/20-demo-sites.md) and verify the English copy, the demo notice, and the intended brand on each site. For a real business site, replace the concept content, add genuine contact details and a working enquiry flow, set its production domain, and review the content before removing indexing restrictions.
 
-Everything is opt-in. Full detail in
-[`CLAUDE.md`](CLAUDE.md) §6 and the [component docs](docs/components/README.md).
+## Repository map
 
-### Site search
-
-Add the index generator to the site's build, then switch it on:
-
-```jsonc
-// package.json
-"build": "astro build && node ../../packages/shared-ui/scripts/search-index.mjs"
+```text
+packages/shared-ui/src/layouts/IndustryDemo.astro  Shared demo layout
+scripts/industry-demo-content.json                Source content for 20 demos
+scripts/generate-demo-sites.mjs                    Site generator
+scripts/deploy-demo-sites.mjs                      Cloudflare Pages uploader
+sites/fleet-*/                                     Independent Astro sites
+docs/20-demo-sites.md                              Project and URL directory
 ```
 
-```astro
-<BaseLayout search searchPlaceholder="Pricing, integrations, security" ...>
-```
+The broader Astro Fleet starter, shared components, and guides remain in this repository. See [Getting Started](docs/getting-started.md), [Components](docs/components/README.md), and [Deployment](docs/deployment.md) for those features.
 
-Built from the HTML that actually shipped, fetched on first use and never on
-load, about 1.8 KB gzipped per page. `/` or Cmd-K opens it. No search service,
-no server, no subscription.
+## Credits and license
 
-### Analytics, behind consent
+Based on the [MIT-licensed Astro Fleet project by Indivar](https://github.com/Indivar/astro-fleet). See [LICENSE](LICENSE).
 
-```astro
-<BaseLayout gaId="G-XXXXXXXXXX" privacyHref="/privacy/" ...>
-```
-
-That is the whole integration. **Nothing is requested from Google until the
-visitor accepts** — stricter than the usual Consent Mode v2 pattern, which
-loads the script immediately with tracking denied. Global Privacy Control is
-read as a decline. `requireConsent={false}` restores standard behaviour.
-
-Your numbers will be lower than a site that tags everyone. They will also match
-what your privacy page says.
-
-### SEO
-
-Automatic once `site` is set in `astro.config.mjs`: per-page titles and
-descriptions, canonicals, Open Graph, Twitter cards, JSON-LD, sitemap.
-[SEO Recipes](docs/seo-recipes.md) covers the rest — per-page OG images,
-git-based `lastmod`, `llms.txt` for answer engines, IndexNow, fuzzy 404
-redirects, one canonical host, a CSP that does not break the form, and
-build-time validation.
-
-### Responsive images
-
-On by default. Drop a photo in `public/images/`, run
-`python3 scripts/responsive-images.py <site>` once, commit the renditions.
-Every `<img>` in the built HTML that has them becomes `<picture>` with AVIF
-and WebP `srcset`, `width`/`height` and lazy loading. Nothing is generated at
-build time and nothing is resized on request. [Images](docs/images.md) has the
-per-image controls and the two checks.
-
----
-
-## What's included
-
-- **24 shared components + 3 layouts** — header, footer, SEO head, CTA blocks,
-  cards, forms, testimonials, breadcrumbs, pricing tables, FAQ accordions, team
-  grids, timelines, hero sliders, section dividers, comparison tables, search
-  and analytics. Typed props, CSS-variable theming, zero JS unless a component
-  needs it.
-- **Design token system** — three presets (Corporate, SaaS, Warm) behind a
-  TypeScript interface. Change colours and fonts per site without touching
-  component code.
-- **Site scaffolder** — `bunx create-astro-fleet` or `./scripts/new-site.sh`,
-  wiring config, styles and the build pipeline.
-- **Search and analytics**, as above.
-- **Responsive images, pre-generated** — AVIF and WebP at four widths, written
-  once by a script and committed; the build rewrites `<img>` to `<picture>`.
-  Two checks fail on a large image without `srcset` or a stock-photo hotlink.
-- **Security headers with an enforced CSP** in the starter's `_headers`, with
-  the placeholders for the form endpoint and analytics marked, and a script
-  that gives each zone one canonical host.
-- **Hardened contact form** — honeypot, success and error states, and a
-  documented submit handler that counts the lead only after the endpoint said
-  yes.
-- **CMS-ready** — the Meridian demo ships with [Keystatic](https://keystatic.com);
-  admin at `/keystatic` in dev, content committed as markdown.
-  [Adding a CMS](docs/adding-a-cms.md) covers the pattern and the alternatives.
-- **Self-hosted fonts** — the Astro Fonts API downloads at build time and serves
-  from your domain. No runtime third-party requests.
-- **Framework-agnostic** — native `.astro` files throughout. Add React, Vue,
-  Svelte, Solid or Preact to any site via Astro's
-  [Islands Architecture](https://docs.astro.build/en/concepts/islands/).
-- **Infrastructure templates** — optional Docker Compose + Traefik + Caddy for
-  self-hosting.
-- **An AI operating manual** — [`CLAUDE.md`](CLAUDE.md) carries the whole path
-  from prerequisites to DNS, including nine failure modes that ship silently in
-  real projects.
-
----
-
-## Live demos
-
-Three fully-built sites. Same monorepo, same shared components, three
-genuinely different looks — the presets are complete site personalities, not
-colour swaps.
-
-| Preset | Demo | Use case | Live |
-|---|---|---|---|
-| **Corporate** | [Meridian Advisory](sites/meridian-advisory.com) | Management consulting firm | [astro-fleet-meridian.pages.dev](https://astro-fleet-meridian.pages.dev) |
-| **SaaS** | [Flux Analytics](sites/flux-analytics.com) | Developer-tool product site | [astro-fleet-flux.pages.dev](https://astro-fleet-flux.pages.dev) |
-| **Warm** | [Olive & Vine](sites/olive-and-vine.com) | Neighbourhood restaurant | [astro-fleet-olive.pages.dev](https://astro-fleet-olive.pages.dev) |
-
-<table>
-  <tr>
-    <td align="center"><strong>Corporate → Meridian Advisory</strong></td>
-    <td align="center"><strong>SaaS → Flux Analytics</strong></td>
-    <td align="center"><strong>Warm → Olive & Vine</strong></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/meridian-home.png" alt="Meridian Advisory home page — corporate consulting firm with editorial hero, dark stat strip, and navy/blue palette" /></td>
-    <td><img src="docs/screenshots/flux-home.png" alt="Flux Analytics home page — SaaS product with dark hero, code mockup, and emerald accents" /></td>
-    <td><img src="docs/screenshots/olive-home.png" alt="Olive & Vine home page — restaurant with warm editorial hero, serif display type, and amber accents" /></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/meridian-services.png" alt="Meridian Advisory expertise page — numbered practice areas in editorial layout" /></td>
-    <td><img src="docs/screenshots/flux-services.png" alt="Flux Analytics product page — dark six-card feature grid with icons and tags" /></td>
-    <td><img src="docs/screenshots/olive-services.png" alt="Olive & Vine menu page — dotted-line typography grouped by course" /></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/meridian-contact.png" alt="Meridian Advisory contact page — briefing request form with global office grid" /></td>
-    <td><img src="docs/screenshots/flux-contact.png" alt="Flux Analytics book-a-demo page — split layout with benefits list and form" /></td>
-    <td><img src="docs/screenshots/olive-contact.png" alt="Olive & Vine reservations page — address, hours, and reservation form" /></td>
-  </tr>
-</table>
-
-Each composes the **same shared components**. The navigation, section structure,
-hero layouts and typography are unique to each brand.
-
----
-
-## Built with Astro Fleet
-
-Eight sites in production on this codebase, across eight industries, plus one
-landing page that shares a domain with the site above it and looks nothing like
-it. Same components, same tokens, same build.
-
-<table>
-<tr valign="top">
-<td width="45%"><a href="https://www.edubold.com"><img src="docs/screenshots/production/edubold.jpg" alt="EduBold home page — an editorial serif headline on pale green, with a hairline-ruled register of the day's figures below it" /></a></td>
-<td>
-
-### [edubold.com](https://www.edubold.com)
-
-**School management ERP for Indian schools and trusts.** Admissions, fees,
-attendance, payroll and double-entry accounts on one set of records.
-
-Set as a ledger, because that is what every Indian school already runs on:
-hairline rules, a section index down the left margin, and red reserved for
-totals and corrections. The homepage opens with the questions a principal asks
-at 8am, each facing its answer.
-
-Site search, consent-gated GA4, and a blog with pagination and archives. 46
-pages.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://edubold.com/a-school-day/"><img src="docs/screenshots/production/aschoolday.jpg" alt="A School Day landing page — dark navy starfield, a live clock and timeline down the left margin, sans-serif display headline" /></a></td>
-<td>
-
-### [edubold.com/a-school-day/](https://edubold.com/a-school-day/)
-
-**The same site, and nothing like it.** A long-form landing page that walks
-through one school day from first bell to last, on the same domain as the page
-above.
-
-Dark navy against pale green. A live clock and timeline down the margin instead
-of a section index. Sans-serif display type instead of the serif. Scroll-driven
-scenes — a timetable that solves itself, a receipt posting to its journal
-entry — instead of a static register.
-
-Here because it makes the point better than any argument: **the codebase does
-not impose a look.** Nothing in the shared layer had to be fought to build it.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.moiengineering.com"><img src="docs/screenshots/production/moi.jpg" alt="MOI Engineering home page — condensed uppercase headline on navy, with an orange technical drawing of meshing involute gears" /></a></td>
-<td>
-
-### [moiengineering.com](https://www.moiengineering.com)
-
-**Packaging and wrapping machinery, built since 1960.** Cigarette making and
-packing lines, capsule machines for pharma, and high-speed wrapping, bundling
-and cartoning systems, shipped to manufacturers in 20+ countries.
-
-Drawn as an engineering document: drawing numbers, revision marks, a technical
-grid, and a hero of true involute gears meshing in WebGL. The catalogue runs to
-28 machines, each with a real specification sheet behind it.
-
-The largest site here at 77 pages.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.hybridagrobots.com"><img src="docs/screenshots/production/hybrid.jpg" alt="Hybrid Agrobots home page — dark hero with a live egg-sorting conveyor scene in lime and black" /></a></td>
-<td>
-
-### [hybridagrobots.com](https://www.hybridagrobots.com)
-
-**Computer-vision grading and sorting machines** for eggs, apples, fruit and
-vegetables, sorting by size, weight, colour and grade.
-
-The hero is the product: a live sorting line rendered in WebGL, eggs moving
-under a vision head that grades and rejects them as you watch. Eleven machines,
-each with its own bespoke scene, lazily loaded and replaced by a still on
-mobile so the phone budget survives.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://boldreach.io"><img src="docs/screenshots/production/boldreach.jpg" alt="BoldReach home page — large centred headline in black on white, above a product screenshot of the CRM risk dashboard" /></a></td>
-<td>
-
-### [boldreach.io](https://boldreach.io)
-
-**A field-sales CRM that fills itself in.** Voice notes become contacts and
-deals, the pipeline nudges reps on WhatsApp, and deals about to slip get flagged
-before anyone has to ask.
-
-The biggest build here: **512 pages**, generated across five regional variants
-so pricing, currency and compliance copy match the reader's market without five
-separate sites.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.indivar.com"><img src="docs/screenshots/production/indivar.jpg" alt="Indivar home page — independent technology consulting" /></a></td>
-<td>
-
-### [indivar.com](https://www.indivar.com)
-
-**Independent technology consulting**: architecture, cloud and delivery, for
-organisations that have already been sold a platform and now need someone
-without a stake in it.
-
-95 pages including a migrated blog, service and product catalogues, and case
-studies. Built to read as a consultancy rather than a vendor, which is the whole
-positioning.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.stakteck.com"><img src="docs/screenshots/production/stakteck.jpg" alt="StakTeck home page — IT staffing and recruitment across India" /></a></td>
-<td>
-
-### [stakteck.com](https://www.stakteck.com)
-
-**IT staffing, contract hiring and staff augmentation across India.** Job
-listings, a talent-pipeline view, and industry expertise grids.
-
-58 pages. The clearest example of the design-token system doing its job: a
-recruitment brand sharing every component with an industrial machinery site and
-looking nothing like it.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.vairi.com"><img src="docs/screenshots/production/vairi.jpg" alt="Vairi Technologies home page — AI-enhanced software and automation, Auckland" /></a></td>
-<td>
-
-### [vairi.com](https://www.vairi.com)
-
-**AI-enhanced software development, business automation, and AI-driven SEO and
-marketing.** Auckland, New Zealand.
-
-The only site here outside India, and the one that most exercises the
-token system's typography settings. Service pillars, a pricing table, process
-steps and an assessment form.
-
-</td>
-</tr>
-
-<tr valign="top">
-<td><a href="https://www.claspt.app"><img src="docs/screenshots/production/claspt.jpg" alt="Claspt home page — encrypted markdown notes and password vault" /></a></td>
-<td>
-
-### [claspt.app](https://www.claspt.app)
-
-**Encrypted markdown notes and a password vault**, on the Microsoft Store, macOS
-and Linux.
-
-A product site rather than a company one: download paths per platform, a
-documentation tree, and a blog. The only entry here that was already running
-GA4 before this repo grew an analytics component.
-
-</td>
-</tr>
-</table>
-
-Every URL was requested and returned 200 on 23 August 2026. The consent bar
-along the bottom of each shot is the [analytics component](#analytics-behind-consent)
-behaving correctly on a first visit — at that moment nothing has been requested
-from Google.
-
-If you ship a site with Astro Fleet, open a PR adding it here.
-
----
-
-## Documentation
-
-**Start here**
-
-- [Build a site with Claude](docs/build-a-site-with-claude.md) — clone to live domain, step by step
-- [Getting Started](docs/getting-started.md) — clone to first deploy in 15 minutes
-- [`CLAUDE.md`](CLAUDE.md) — the operating manual Claude reads. Worth reading yourself
-
-**Building**
-
-- [Adding a Site](docs/adding-a-site.md) — create and configure additional sites
-- [Components](docs/components/README.md) — one page per component: what it is, when to use it,
-  every setting in plain words, a copy-paste example, and the mistakes people make
-- [Design Tokens](docs/design-tokens.md) — presets and custom palettes
-- [Framework Integrations](docs/framework-integrations.md) — React, Vue, Svelte, islands, view transitions
-- [Adding a CMS](docs/adding-a-cms.md) — the Keystatic pattern, and when to pick something else
-- [Translating a Site](docs/i18n.md) — **optional.** A second language under its own URL prefix,
-  with translated pages held back from Google until a person has read them
-
-**Shipping**
-
-- [SEO Recipes](docs/seo-recipes.md) — OG images, `llms.txt`, IndexNow, canonical host, CSP, validation
-- [Images](docs/images.md) — pre-generated renditions, stock-photo localisation, the checks
-- [Deployment](docs/deployment.md) — Cloudflare Pages, Vercel, Netlify, self-hosted, security headers
-- [AI Workflow](docs/ai-workflow.md) — prompts, tool setup, AI-driven patterns
-- [Changelog](CHANGELOG.md) — what changed, and when
-
----
-
-## Stack
-
-Astro 6 · Bun · Turborepo 2 · Tailwind CSS 4 · TypeScript · static-first, zero JS
-by default · works with React, Vue, Svelte, Solid and Preact
-
-## License
-
-MIT. Use it for anything. See [LICENSE](LICENSE).
-
-## Credits
-
-Built by [Indivar Software Solutions](https://indivar.com), a software company
-in India and New Zealand. We use Astro Fleet to run our own portfolio of company
-websites — the seven listed above.
