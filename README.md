@@ -4,7 +4,7 @@
 
 This repository contains 20 English, one-page industry website concepts built with Astro. Each site is an independent workspace in `sites/fleet-*`, with its own brand copy, colors, favicon, and Cloudflare Pages project. The sites share one layout in `packages/shared-ui/src/layouts/IndustryDemo.astro`.
 
-Browse the [20-site directory](docs/20-demo-sites.md) for project names, industries, brands, and Cloudflare URLs. Those URLs identify existing projects; publishing a GitHub commit alone does not update their live content.
+Browse the [20-site directory](docs/20-demo-sites.md) for project names, industries, brands, and Cloudflare URLs. Those URLs identify existing projects. Once the deployment secret is configured, changes pushed to `main` automatically publish the 20 demos through GitHub Actions.
 
 > These are design demonstrations, not real businesses. They have no contact form or invented contact details. Every demo includes `noindex` and a `robots.txt` rule that blocks indexing.
 
@@ -47,7 +47,24 @@ The `--update` command rewrites generated site files, including each site's `src
 
 ## Publish to Cloudflare Pages
 
-The 20 demos use **direct uploads** to separate Cloudflare Pages projects. A push to this GitHub repository does not trigger a Pages deployment. Run the deployment script whenever you want the live sites to reflect a new build.
+The 20 demos use **direct uploads** to separate Cloudflare Pages projects.
+
+### Automatic publishing from GitHub
+
+The [Cloudflare publishing workflow](.github/workflows/cloudflare-pages.yml) builds and publishes all 20 demos when site code, shared packages, scripts, or build configuration changes on `main`.
+
+One-time setup:
+
+1. Create a Cloudflare API token with **Account → Cloudflare Pages → Edit**, restricted to the account that owns these projects.
+2. Open this repository's **Settings → Secrets and variables → Actions → New repository secret**.
+3. Save the token as `CLOUDFLARE_API_TOKEN`. The workflow already specifies the existing deployment account ID.
+4. Open **Actions → Publish 20 sites to Cloudflare Pages → Run workflow** to publish the current English version.
+
+Later qualifying pushes to `main` deploy automatically. You can also use **Run workflow** to retry a failed or interrupted deployment. Inspect the workflow logs to confirm all 20 projects finished. Never put the token in source code or README.
+
+### Publish from your computer
+
+Run the deployment script whenever you want to publish a local build.
 
 1. Install [Wrangler](https://developers.cloudflare.com/workers/wrangler/install-and-update/) so `wrangler` is on your `PATH`, and authenticate with `wrangler login` or a `CLOUDFLARE_API_TOKEN` authorized to manage Pages projects and deployments.
 2. Set `CLOUDFLARE_ACCOUNT_ID` to the account that owns the Pages projects. Use an environment variable; do not commit credentials.
