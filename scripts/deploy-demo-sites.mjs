@@ -24,8 +24,7 @@ function wrangler(args) {
   return result.stdout;
 }
 
-// Check authentication before creating anything.
-wrangler(['whoami']);
+// Validate Pages access before creating anything; avoid requiring account-list permissions.
 const existing = JSON.parse(wrangler(['pages', 'project', 'list', '--json']));
 const existingNames = new Set(existing.map((project) => project.name ?? project['Project Name']));
 const results = [];
