@@ -23,7 +23,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       CLOUDFLARE_ACCOUNT_ID: a8a6f999d47c520aff2edbec532fab5c
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
